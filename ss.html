@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>আমাদের দেড় বছর | স্মৃতির অ্যালবাম</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #ffe6f2 0%, #e6f2ff 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #ff4081 0%, #3f51b5 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 5px 20px rgba(255, 64, 129, 0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+.counter{
+  background:rgba(0,0,0,0.3);
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  margin:20px 0;
+  font-size:20px;
+}
+
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 5%;
+            width: 90%;
+            height: 10px;
+            background: rgba(63, 81, 181, 0.2);
+            border-radius: 50%;
+        }
+        
+        .main-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .timeline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            margin-top: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Heart Animation */
+        .heart {
+            color: #ff4081;
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1.1); }
+            45% { transform: scale(1.3); }
+            60% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Main Container */
+        .container {
+            width: 95%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        /* Couple Section */
+        .couple-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 15px;
+            margin: 25px auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .couple-title {
+            color: #3f51b5;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .couple-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff4081 0%, #3f51b5 100%);
+            border-radius: 3px;
+        }
+        
+        .couple-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .person-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .person-card:active {
+            transform: scale(0.98);
+        }
+        
+        .person-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        
+        .person-name {
+            font-size: 1.4rem;
+            color: #3f51b5;
+            margin-bottom: 8px;
+        }
+        
+        .person-quote {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        .heart-connector {
+            font-size: 2.5rem;
+            color: #ff4081;
+            margin: 10px 0;
+            animation: heartbeat 2s infinite;
+            text-align: center;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            margin: 30px auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #3f51b5;
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff4081 0%, #3f51b5 100%);
+            border-radius: 2px;
+        }
+        
+        /* Photo Grid for Mobile */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .photo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .photo-card:active {
+            transform: scale(0.97);
+        }
+        
+        .photo-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-card:target .photo-img {
+            transform: scale(1.05);
+        }
+        
+        .photo-desc {
+            padding: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+            background: white;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .photo-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #3f51b5;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(63, 81, 181, 0.3);
+        }
+        
+        /* Photo Modal Simulation */
+        .photo-card:target {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .photo-card:target .photo-img {
+            max-width: 100%;
+            max-height: 60%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .photo-card:target .photo-desc {
+            position: static;
+            color: white;
+            background: transparent;
+            font-size: 1.2rem;
+            padding: 20px 10px;
+            margin-top: 10px;
+            min-height: auto;
+        }
+        
+        .photo-card:target .photo-number {
+            display: none;
+        }
+        
+        .close-modal {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2.5rem;
+            text-decoration: none;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Love Message Section */
+        .love-section {
+            background: linear-gradient(135deg, #ffebee 0%, #e8eaf6 100%);
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 5px solid white;
+        }
+        
+        .love-section::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(90deg, #ff4081 0%, #3f51b5 100%);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .love-title {
+            text-align: center;
+            color: #ff4081;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        
+        .love-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .highlight {
+            color: #3f51b5;
+            font-weight: bold;
+        }
+        
+        .signature {
+            text-align: right;
+            font-size: 1.4rem;
+            color: #ff4081;
+            font-style: italic;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2px dashed #3f51b5;
+        }
+        
+        /* Interactive Section */
+        .interactive-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin: 30px auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .interactive-title {
+            color: #3f51b5;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Toggle Message with CSS Only */
+        .message-toggle {
+            display: none;
+        }
+        
+        .toggle-label {
+            display: block;
+            padding: 15px 25px;
+            background: linear-gradient(90deg, #ff4081 0%, #3f51b5 100%);
+            color: white;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin: 0 auto 20px;
+            width: 90%;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toggle-label:active {
+            transform: scale(0.98);
+        }
+        
+        .toggle-label::after {
+            content: '↓';
+            position: absolute;
+            right: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .message-toggle:checked + .toggle-label::after {
+            transform: rotate(180deg);
+        }
+        
+        .hidden-message {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-top: 0;
+        }
+        
+        .message-toggle:checked ~ .hidden-message {
+            max-height: 500px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        .special-message {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 30px;
+            border-top: 2px dashed #3f51b5;
+        }
+        
+        .footer-heart {
+            color: #ff4081;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .heart-bg {
+            position: absolute;
+            color: rgba(255, 64, 129, 0.15);
+            font-size: 20px;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Navigation Dots */
+        .page-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .nav-dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: #3f51b5;
+            border-radius: 50%;
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+        
+        .nav-dot:target {
+            opacity: 1;
+            background: #ff4081;
+            transform: scale(1.3);
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 380px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .person-img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 700px;
+            }
+            
+            .photo-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .couple-container {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .heart-connector {
+                margin: 0 20px;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        button, .toggle-label, .photo-card, .person-card {
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        /* Prevent text selection on interactive elements */
+        .no-select {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        /* Loading animation for images */
+        .photo-img {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Hearts -->
+    <div class="floating-hearts">
+        <div class="heart-bg" style="left: 10%; animation-delay: 0s;">❤</div>
+        <div class="heart-bg" style="left: 20%; animation-delay: 3s;">❤</div>
+        <div class="heart-bg" style="left: 30%; animation-delay: 6s;">❤</div>
+        <div class="heart-bg" style="left: 40%; animation-delay: 9s;">❤</div>
+        <div class="heart-bg" style="left: 50%; animation-delay: 12s;">❤</div>
+        <div class="heart-bg" style="left: 60%; animation-delay: 1s;">❤</div>
+        <div class="heart-bg" style="left: 70%; animation-delay: 4s;">❤</div>
+        <div class="heart-bg" style="left: 80%; animation-delay: 7s;">❤</div>
+        <div class="heart-bg" style="left: 90%; animation-delay: 10s;">❤</div>
+    </div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="main-title">Memories of about a year and a half <span class="heart">❤</span></h1>
+        <p class="subtitle">প্রতিটি মুহূর্তের সুন্দর গল্প</p>
+        <div class="container">
+
+
+
+<div class="counter">
+  <h2>We starte our journy together</h2>
+  <p id="time"></p>
+</div>
+
+</div>
+
+<script>
+const startDate = new Date("2024-09-04T00:00:00");
+
+function updateTime(){
+  const now = new Date();
+  const diff = now - startDate;
+
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff / (1000*60*60)) % 24);
+  const minutes = Math.floor((diff / (1000*60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("time").innerHTML =
+    `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+}
+
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+    </header>
+    
+    <main class="container">
+        <!-- Couple Section -->
+        <section class="couple-section">
+            <h2 class="couple-title">আমরা দুজন</h2>
+            <div class="couple-container">
+                <div class="person-card">
+                    <img src="WhatsApp Image 2026-02-02 at 15.27.56.jpeg" alt="Person 2" class="person-img">
+                    <h3 class="person-name">Ifnat's Hasband</h3>
+                    <p class="person-quote">"তোমার সাথে প্রতিটি মুহূর্ত চাই"</p>
+                </div>
+                
+                <div class="heart-connector">❤</div>
+                
+                <div class="person-card">
+                    <img src="WhatsApp Image 2026-02-02 at 15.31.30.jpeg" alt="Person 1" class="person-img">
+                    <h3 class="person-name">Ifran's Wife</h3>
+                    <p class="person-quote">"আমার জীবনের সবচেয়ে সুন্দর উপহার"</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <h2 class="section-title">Memory Album</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px; font-size: 0.95rem;">ছবিতে ট্যাপ করে বড় দেখুন</p>
+            
+            <!-- Photo Grid -->
+            <div class="photo-grid">
+                <!-- Photo 1 -->
+                <a href="#photo1" class="photo-card" id="photo1">
+                    <div class="photo-number">১</div>
+                    <img src="WhatsApp Image 2026-02-02 at 16.44.28.jpeg" alt="First Meeting" class="photo-img">
+                    <div class="photo-desc">04/11/2024<br>We met my soulmate for the first time.🧡</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 2 -->
+                <a href="#photo2" class="photo-card" id="photo2">
+                    <div class="photo-number">২</div>
+                    <img src="WhatsApp Image 2026-02-02 at 16.48.21.jpeg" alt="First Date" class="photo-img">
+                    <div class="photo-desc">18/11/2024<br>We met on the second day.<br>That day, she slapped me.😑</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 3 -->
+                <a href="#photo3" class="photo-card" id="photo3">
+                    <div class="photo-number">৩</div>
+                    <img src="WhatsApp Image 2026-02-02 at 16.53.54.jpeg" alt="Birthday" class="photo-img">
+                    <div class="photo-desc">first touch💘</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 4 -->
+                <a href="#photo4" class="photo-card" id="photo4">
+                    <div class="photo-number">৪</div>
+                    <img src="WhatsApp Image 2026-02-02 at 16.52.13.jpeg" alt="Phone Call" class="photo-img">
+                    <div class="photo-desc">প্রথম আমার কাঁধে মাথা রেখেছে😘</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 5 -->
+                <a href="#photo5" class="photo-card" id="photo5">
+                    <div class="photo-number">৫</div>
+                    <img src="WhatsApp Image 2026-02-02 at 16.57.00.jpeg" alt="Movie" class="photo-img">
+                    <div class="photo-desc">আমার বউটাকে প্রথম ফুল দিয়েছি🌹</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 6 -->
+                <a href="#photo6" class="photo-card" id="photo6">
+                    <div class="photo-number">৬</div>
+                    <img src="WhatsApp Image 2026-02-02 at 16.57.45.jpeg" alt="First Fight" class="photo-img">
+                    <div class="photo-desc">এই মুহূর্তটা অনেক সুন্দর ছিল😚</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 7 -->
+                <a href="#photo7" class="photo-card" id="photo7">
+                    <div class="photo-number">৭</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.00.04.jpeg" alt="First Trip" class="photo-img">
+                    <div class="photo-desc">আমার বউটাকে আমার ওয়ালেটে রাখলাম😙</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 8 -->
+                <a href="#photo8" class="photo-card" id="photo8">
+                    <div class="photo-number">৮</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.02.15.jpeg" alt="Cooking" class="photo-img">
+                    <div class="photo-desc">দুইজনেই খুশি কারণ দুইজনের মন একটাই💑</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 9 -->
+                <a href="#photo9" class="photo-card" id="photo9">
+                    <div class="photo-number">৯</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.04.36.jpeg" alt="Festival" class="photo-img">
+                    <div class="photo-desc">দেখা করবা, চলো করি, আর হয়ে গেল দেখা🤷</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 10 -->
+                <a href="#photo10" class="photo-card" id="photo10">
+                    <div class="photo-number">১০</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.06.14.jpeg" alt="Sunset" class="photo-img">
+                    <div class="photo-desc">ডুবেছি আমি তোমার চোখের অনন্ত মায়ায়👀</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 11 -->
+                <a href="#photo11" class="photo-card" id="photo11">
+                    <div class="photo-number">১১</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.07.58.jpeg" alt="Decision" class="photo-img">
+                    <div class="photo-desc">আমার বউটা আমাকে প্রথম ফুল দিল😙</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 12 -->
+                <a href="#photo12" class="photo-card" id="photo12">
+                    <div class="photo-number">১২</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.11.41.jpeg" alt="Problem Solving" class="photo-img">
+                    <div class="photo-desc">প্রথম সমস্যা সমাধান</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 13 -->
+                <a href="#photo13" class="photo-card" id="photo13">
+                    <div class="photo-number">১৩</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.11.42.jpeg" alt="Music" class="photo-img">
+                    <div class="photo-desc">তোমাকে বুকে রাখতে কি যে ভালো লাগে😙</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 14 -->
+                <a href="#photo14" class="photo-card" id="photo14">
+                    <div class="photo-number">১৪</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.14.48.jpeg" alt="Rain" class="photo-img">
+                    <div class="photo-desc">আমার বউরানী  তার হাসি মাশাল্লাহ😇</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 15 -->
+                <a href="#photo15" class="photo-card" id="photo15">
+                    <div class="photo-number">১৫</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.17.29.jpeg" alt="Project" class="photo-img">
+                    <div class="photo-desc">এভাবে তাকাইও না ভয় লাগে তো 🥺</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 16 -->
+                <a href="#photo16" class="photo-card" id="photo16">
+                    <div class="photo-number">১৬</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.19.45.jpeg" alt="Family" class="photo-img">
+                    <div class="photo-desc">আমরা দুজনেই অনেক ভদ্র 🤧</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 17 -->
+                <a href="#photo17" class="photo-card" id="photo17">
+                    <div class="photo-number">১৭</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.24.16.jpeg" alt="Wedding" class="photo-img">
+                    <div class="photo-desc">আমাকে কামড় দিছে তাই আমিও কামড় দিয়ে দিয়েছি 😁</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 18 -->
+                <a href="#photo18" class="photo-card" id="photo18">
+                    <div class="photo-number">১৮</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.22.03.jpeg" alt="New Year" class="photo-img">
+                    <div class="photo-desc">ভালোবাসা আদান-প্রদান😁</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 19 -->
+                <a href="#photo19" class="photo-card" id="photo19">
+                    <div class="photo-number">১৯</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.27.09.jpeg" alt="Care" class="photo-img">
+                    <div class="photo-desc">আমার বউটা আমার নাম লিখেছে তার হাতে 😘</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+                <!-- Photo 20 -->
+                <a href="#photo20" class="photo-card" id="photo20">
+                    <div class="photo-number">২০</div>
+                    <img src="WhatsApp Image 2026-02-02 at 17.28.18.jpeg" alt="Anniversary" class="photo-img">
+                    <div class="photo-desc">আমার পাগলি বউটা আর আমি😘</div>
+                    <a href="#gallery" class="close-modal">×</a>
+                </a>
+                
+            </div>
+            
+            <!-- Navigation Dots -->
+            <div class="page-nav">
+                <a href="#page1" class="nav-dot" id="page1"></a>
+                <a href="#page2" class="nav-dot" id="page2"></a>
+                <a href="#page3" class="nav-dot" id="page3"></a>
+                <a href="#page4" class="nav-dot" id="page4"></a>
+            </div>
+        </section>
+        
+        <!-- Interactive Message -->
+        <section class="interactive-section">
+            <h2 class="interactive-title">Special message</h2>
+            
+            <input type="checkbox" id="messageToggle" class="message-toggle">
+            <label for="messageToggle" class="toggle-label">Type to read the message</label>
+            
+            <div class="hidden-message">
+                <div class="special-message">
+                    <p>Dear, this one and a half years is not just time for us, it is a beautiful journey. Every day, every moment you have made my life more meaningful.😘😘😘</p>
+                    
+                    <p style="margin-top: 15px;">I learned a lot from the time I spent with you, I dreamed a lot about you and our future. I want to make my dreams come true with you 🥺</p>
+                    
+                    <p style="margin-top: 15px; color: #ff4081; font-weight: bold;">I want this journey of ours to last forever. I want to live with you until my last breath. 🥺</p>
+                    
+                    <p style="margin-top: 15px; text-align: center; font-size: 1.2rem;">
+                        Love you soo muchhhh sona boww amar<span class="heart">❤</span> 
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Love Message Section -->
+        <section class="love-section">
+            <h2 class="love-title">তোমাকে নিয়ে কিছু কথা</h2>
+            
+            <p class="love-text">সেই সেপ্টেম্বরের ৪ তারিখ ২০২৪ থেকে আজ পর্যন্ত আমাদের সম্পর্ক অনেক সুন্দর ভাবে চলছে।</p>
+            
+            <p class="love-text">তোমার উপস্থিতি আমার জীবনে এনেছে অনেক অনেক সুখ, যেভাবে আমাকে ভালোবেসেছো এতদিন ঠিক সেভাবে বাকি জীবনটুকু ভালোবেসে যেও।</p>
+            
+            <p class="love-text">সম্পর্কের ভিতরে ঝগড়া, ভুল বোঝাবুঝি এসব থাকে স্বাভাবিক, তাই সম্পর্কের ভিতরে ঝগড়াঝাটি ভুল বোঝা উচিত হলেও কখনো ছেড়ে যেও না আমাকে। প্রতিদিন আমাকে প্রথম দিনের মতো ভালোবাসিও ❤️</p>
+            
+            <div class="signature">
+               অনেক অনেক ভালোবাসি<br>
+               বউ জান আমার 😘😘
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>এই ওয়েবসাইটটি বানিয়েছি শুধু আমার বউয়ের জন্য <span class="footer-heart">❤</span></p>
+        <p style="margin-top: 10px;">© 2024 - আমাদের গল্প</p>
+        <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">ছবিতে ট্যাপ করে বড় দেখুন | বার্তা পড়তে ট্যাপ করুন</p>
+    </footer>
+</body>
+</html>
